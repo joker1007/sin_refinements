@@ -1,8 +1,11 @@
-# SinRefinements
+# sin_refinements
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sin_refinements`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem enables Proc level refinements forcibly.
+But it is too slow!!
+Please don't use in production.
 
-TODO: Delete this and the text above, and describe your gem
+sin means that this gem uses very sinned way (eval, AST, instance_exec).
+And sin (真) means True in Japanese.
 
 ## Installation
 
@@ -22,7 +25,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+module ExtMod
+  refine String do
+    def bang
+      "#{self}!!"
+    end
+  end
+end
+
+SinRefinements.refining(ExtMod) do
+  expect("foo".bang).to eq("foo!!")
+end
+```
 
 ## Development
 
