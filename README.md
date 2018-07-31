@@ -39,6 +39,42 @@ SinRefinements.refining(ExtMod) do
 end
 ```
 
+## Performance
+
+### SinRefinements.refining
+
+```
+Warming up --------------------------------------
+    plain   153.770k i/100ms
+ refining    56.000  i/100ms
+Calculating -------------------------------------
+    plain    2.094M (± 3.3%) 
+ refining  560.413  (± 1.2%) 
+
+Comparison:
+    plain:  2093833.1 i/s
+ refining:      560.4 i/s - 3736.23x  slower
+```
+
+---
+
+### SinRefinements.light_refining
+
+This version does not support local variables.
+
+```
+Warming up --------------------------------------
+    plain   145.078k i/100ms
+ refining    18.123k i/100ms
+Calculating -------------------------------------
+    plain      1.941M (± 3.0)
+ refining    189.518k (± 2.6)
+
+Comparison:
+    plain:  1941491.1 i/s
+ refining:   189518.0 i/s - 10.24x  slower
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
