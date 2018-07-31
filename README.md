@@ -1,8 +1,9 @@
 # sin_refinements
 
 This gem enables Proc level refinements forcibly.
-But it is too slow!!
-Please don't use in production.
+
+**But it is too slow!!**
+**Please don't use in production.**
 
 sin means that this gem uses very sinned way (eval, AST, instance_exec).
 And sin (真) means True in Japanese.
