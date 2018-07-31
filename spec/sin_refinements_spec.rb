@@ -23,4 +23,14 @@ RSpec.describe SinRefinements do
       end
     end
   end
+
+  describe ".light_refining" do
+    it "refines only passed Proc" do
+      SinRefinements.light_refining(ExtMod) do
+        expect("foo".bang).to eq("foo!!")
+      end
+
+      expect { "foo".bang }.to raise_error(NoMethodError)
+    end
+  end
 end
